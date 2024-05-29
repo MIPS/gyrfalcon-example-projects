@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "type": "gdb",
+      "request": "launch",
+      "name": "Debug Example C++ (cmake-example)",
+      "program": "${workspaceFolder}/cmake-example/Example",
+      "initCommands": [
+        "tbreak main"
+      ],
+      "preLaunchTask": "Binary build (cmake-example)"
+    }
+  ]
+}
