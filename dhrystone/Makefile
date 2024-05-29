@@ -1,6 +1,6 @@
 DHRY-LFLAGS =
 
-DHRY-CFLAGS := -O3 -DTIME -DNOENUM -Wno-implicit -save-temps
+DHRY-CFLAGS := -O3 -g -DTIME -DNOENUM -Wno-implicit -save-temps
 DHRY-CFLAGS += -fno-builtin-printf -fno-common -falign-functions=4
 
 DHRY-CFLAGS += -DDHRY_ITERS=20
