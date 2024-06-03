@@ -1,3 +1,4 @@
 {
-    "workbench.list.openMode": "doubleClick"
+    "workbench.list.openMode": "doubleClick",
+    "cmake.sourceDirectory": "/home/kmills/git/mpe-projects/cmake-example"
 }
