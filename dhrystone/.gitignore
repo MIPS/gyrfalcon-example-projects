@@ -9,7 +9,6 @@
 *.o
 *.ko
 *.obj
-*.elf
 
 # Linker output
 *.ilk
