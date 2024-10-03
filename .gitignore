@@ -1,2 +1,4 @@
 experiments/
 **/*.elf
+**/*.hdf5
+**/*.zstf
