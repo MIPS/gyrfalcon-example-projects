@@ -1,0 +1,13 @@
+content:
+  # Report 1: json
+  report:
+    pattern:   top
+    def_file:  reports/core_stats.yaml
+    dest_file: %OUT_BASE%.json
+    format:    json
+  # Report 1: html
+  report:
+    pattern:   top
+    def_file:  reports/core_stats.yaml
+    dest_file: %OUT_BASE%.html
+    format:    html

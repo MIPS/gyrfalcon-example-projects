@@ -2,5 +2,6 @@
     "files.exclude": {
         "**/experiments/**/.experiment": true,
         "**/reports/**/.report": true
-    }
+    },
+    "gyrfalcon.operatingMode.version": "latest"
 }

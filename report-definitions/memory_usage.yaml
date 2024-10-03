@@ -1,0 +1,10 @@
+name: "LSU Performance Report"
+style:
+  decimal_places: 2
+content:
+  cycles : Total cycles consumed
+  cpu.core*.lsu.stats.stall_none : LSU Stall None
+  cpu.core*.lsu.stats.stall_load_queue_full : Load Queue Full (cycles)
+  cpu.core*.lsu.stats.stall_store_queue_full : Store Queue Full (cycles)
+  cpu.core*.lsu.stats.stall_msq_full : L1 D-Cache Misses
+  

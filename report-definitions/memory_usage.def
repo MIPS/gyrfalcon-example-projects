@@ -1,0 +1,18 @@
+content:
+  report:
+    pattern:   top
+    def_file:  ./memory_usage.yaml
+    dest_file: %OUT_BASE%.html
+    format:    html
+  report:
+    pattern:   top
+    def_file:  ./memory_usage.yaml
+    dest_file: %OUT_BASE%.json
+    format:    json
+  report:
+    pattern:   top
+    def_file:  ./memory_usage.yaml
+    dest_file: %OUT_BASE%.csv
+    format: csv
+    trigger:
+      update-count: top.cpu.core0.rob.stats.total_number_retired %TS_PERIOD%

@@ -1,0 +1,8 @@
+name: "ALU Performance Report"
+style:
+  decimal_places: 2
+content:
+  cycles : Total cycles consumed
+  cpu.core*.execute.alu0_pipe.stats.total_insts_executed : ALU 0 Instructions Executed
+  cpu.core*.execute.alu1_pipe.stats.total_insts_executed : ALU 1 Instructions Executed
+  
