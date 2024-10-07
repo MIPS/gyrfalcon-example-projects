@@ -1,5 +1,7 @@
+#include <stdio.h>
 extern int rasterize();
 
 int main() {
-	rasterize();
+	double result = rasterize();
+	printf("Mandelbrot! %f", result);
 }

@@ -6,6 +6,7 @@
  */
 #include <math.h>
 #include "mandel.h"
+#include "trace_macros.h"
 
 int iX, iY;
 
@@ -32,10 +33,11 @@ void setup_px() {
 	Zy2 = Zy * Zy;
 }
 
-int rasterize() {
+double rasterize() {
 	PixelWidth = ( CxMax - CxMin ) / XRES;
 	PixelHeight = ( CyMax - CyMin ) / YRES;
 
+	START_TRACE
 	for (iY = 0; iY < YRES; iY++) {
 		Cy = CyMin + iY * PixelHeight;
 
@@ -48,6 +50,7 @@ int rasterize() {
 			iterate_px(iX, iY);
 		}
 	}
-	return 0;
+	STOP_TRACE
+	return Cx*Cy;
 }
 
