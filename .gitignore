@@ -1,4 +1,6 @@
 experiments/
-**/*.elf
+#**/*.elf
 **/*.hdf5
 **/*.zstf
+.gyrfalcon
+*.tar.gz
