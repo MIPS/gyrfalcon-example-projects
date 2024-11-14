@@ -3,5 +3,9 @@
         "**/experiments/**/.experiment": true,
         "**/reports/**/.report": true
     },
-    "gyrfalcon.operatingMode.version": "latest"
+    "gyrfalcon.operatingMode.version": "latest",
+    "gyrfalcon.general.environment": "int",
+    "gyrfalcon.general.channel": "development",
+    "gyrfalcon.general.region": "us-east-1",
+    "cmake.ignoreCMakeListsMissing": true
 }
