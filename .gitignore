@@ -4,3 +4,4 @@ experiments/
 **/*.zstf
 .gyrfalcon
 *.tar.gz
+**/.vscode/settings.json
