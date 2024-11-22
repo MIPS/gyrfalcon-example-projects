@@ -1,5 +1,0 @@
-{
-    "tool": "stf_imem",
-    "parameters" : "-S -l",
-    "output_format": "txt"
-}
