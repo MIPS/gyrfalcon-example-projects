@@ -5,3 +5,5 @@ experiments/
 .gyrfalcon
 *.tar.gz
 **/.vscode/settings.json
+**/*.cgraph
+**/*.su

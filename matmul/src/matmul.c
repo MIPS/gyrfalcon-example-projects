@@ -1,3 +1,4 @@
+#include "trace_macros.h"
 #define DIM 40
 
 int main() {
@@ -25,6 +26,7 @@ int main() {
     }
 
     // Perform matrix multiplication
+    START_TRACE
     for (int i = 0; i < r1; i++) {
         for (int j = 0; j < c2; j++) {
             result[i][j] = 0;
@@ -33,6 +35,7 @@ int main() {
             }
         }
     }
-
+    STOP_TRACE
+    
     return 0;
 }

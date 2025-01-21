@@ -3,5 +3,5 @@ extern int rasterize();
 
 int main() {
 	double result = rasterize();
-	printf("Mandelbrot! %f", result);
+	//printf("Mandelbrot! %f", result);
 }
