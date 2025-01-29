@@ -25,7 +25,8 @@ double Zx2, Zy2;
 
 extern void iterate_px(int iX, int iY);
 
-void setup_px() {
+void setup_px()
+{
 	Cx = CxMin + iX * PixelWidth;
 	Zx = 0.0;
 	Zy = 0.0;
@@ -33,24 +34,27 @@ void setup_px() {
 	Zy2 = Zy * Zy;
 }
 
-double rasterize() {
-	PixelWidth = ( CxMax - CxMin ) / XRES;
-	PixelHeight = ( CyMax - CyMin ) / YRES;
+double rasterize()
+{
+	PixelWidth = (CxMax - CxMin) / XRES;
+	PixelHeight = (CyMax - CyMin) / YRES;
 
-	START_TRACE
-	for (iY = 0; iY < YRES; iY++) {
+	START_TRACE;
+	for (iY = 0; iY < YRES; iY++)
+	{
 		Cy = CyMin + iY * PixelHeight;
 
-		if (fabs(Cy) < (PixelHeight / 2)) {
+		if (fabs(Cy) < (PixelHeight / 2))
+		{
 			Cy = 0.0;
 		}
 
-		for (iX = 0; iX < XRES; iX++) {
+		for (iX = 0; iX < XRES; iX++)
+		{
 			setup_px();
 			iterate_px(iX, iY);
 		}
 	}
-	STOP_TRACE
-	return Cx*Cy;
+	STOP_TRACE;
+	return Cx * Cy;
 }
-

@@ -5,7 +5,7 @@
 #define MEMORY_SIZE 1024 // Adjust based on your memory size
 
 int errors = 0;
-void memory_walk_test(volatile uint8_t *memory) {
+void memory_walk_test(uint8_t *memory) {
 
     uint8_t pattern = 0x55; // Test pattern
 
@@ -19,7 +19,7 @@ void memory_walk_test(volatile uint8_t *memory) {
 }
  
 int main() {
-    volatile uint8_t *memory = (volatile uint8_t *)0x10000000; // Replace with your memory address
+    uint8_t memory[MEMORY_SIZE];
     memory_walk_test(memory); 
     return 0;
 }
