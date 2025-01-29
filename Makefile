@@ -18,4 +18,10 @@ clean: $(example_list)
 fresh: $(example_list)
 	for f in $(example_list); do cd $$f && make fresh && cd ..; done
 
+# Run these targets to check that your compiler configuration is good
+# These targets must be run separately, do not do this:
+#
+# $make checkcc64 checkcc32
+#
+# If sucessful. you will see the version statement from the compiler.
 checkcc64 checkcc32: checkcc
