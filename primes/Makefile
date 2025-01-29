@@ -19,3 +19,6 @@ $(PROGRAM): $(wildcard src/*.c) $(wildcard src/*.h)
 
 clean:
 	rm -f $(PROGRAM).elf *.i *.o *.s
+
+fresh: clean
+	rm -rf experiments

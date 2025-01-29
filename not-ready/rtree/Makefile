@@ -10,6 +10,8 @@ INC=rtree.h trace_macros.h
 TARGET=rtree
 INCLUDE=.
 
+all: ${TARGET}
+
 ${TARGET}: ${SRC} ${INC}
 		$(CC) $(CFLAGS) -O -o $@ ${SRC} -I$(INCLUDE)
 clean:

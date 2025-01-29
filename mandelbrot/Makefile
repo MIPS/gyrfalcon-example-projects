@@ -38,3 +38,6 @@ all: O0 O1 O2 O3
 
 clean:
 	rm -f *.elf *.i *.o *.s *.su *.cgraph *.map
+
+fresh: clean
+	rm -rf experiments

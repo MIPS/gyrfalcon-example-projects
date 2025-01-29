@@ -3,7 +3,6 @@
 #include <time.h>
 #include <string.h>
 #include <stdint.h>
-#include <arpa/inet.h>
 #include "rtree.h"
 #include "../mips_trace/trace_macros.h"
 uint32_t

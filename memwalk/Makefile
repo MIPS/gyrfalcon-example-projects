@@ -37,4 +37,7 @@ $(PROGRAM)_Os: $(wildcard src/*.c) $(wildcard src/*.h)
 all: O0 O1 O2 O3
 
 clean:
-	rm -f *.elf *.i *.o *.s *.su *.cgraph
+	rm -f *.elf *.i *.o *.s *.su *.cgraph *.map
+
+fresh: clean
+	rm -rf experiments
