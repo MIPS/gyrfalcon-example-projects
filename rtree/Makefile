@@ -1,11 +1,10 @@
-#LD_LIBRARY_PATH=/home/cfu.scratch/install/lib64 
-#/home/ashrivastava.scratch/tools/install/llvm/bin/clang
-CC=riscv64-mti-elf-gcc
-CFLAGS= -O3 -march=rv64gc -static 
-# SYSROOT=/home/ashrivastava.scratch/tools/install/riscv_gnu/sysroot
-# GCC_TOOLCHAIN=/home/ashrivastava.scratch/tools/install/riscv_gnu/
-# QEMU=/home/ashrivastava.scratch/tools/riscv-qemu/build/qemu-riscv64
+# Use this if the toolchain is in your PATH.
+# CC = riscv64-mti-elf-gcc
 
+# Or you can explicitly point to the compiler.
+CC = $${HOME}/toolchain/riscv-elf/v2.05/bin/riscv64-mti-elf-gcc
+
+CFLAGS= -O3 -march=rv64gc -static 
 SRC=main.c rtree.c
 INC=rtree.h trace_macros.h
 TARGET=rtree
@@ -18,9 +17,5 @@ clean:
 
 disasm:
 	$(CC) -S $(CFLAGS) --sysroot=$(SYSROOT) --gcc-toolchain=$(GCC_TOOLCHAIN) -c rtree.c -I$(INCLUDE) 
-
-# run:
-# 	export QEMU_CPU=rv64,zba=true,zbb=true
-# 	$(QEMU) -L /home/ashrivastava.scratch/tools/install/riscv_gnu/sysroot rtree
 
 

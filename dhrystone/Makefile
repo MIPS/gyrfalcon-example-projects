@@ -1,10 +1,17 @@
+RISCV_PATH=${HOME}/toolchain/riscv-elf/v2.05/bin
+CC = ${RISCV_PATH}/riscv64-mti-elf-gcc
+
+ifeq ($(RISCV_PATH),)
+# If RISCV_PATH is not defined, then it is assumed that the bin folder is on your path.
+CC = riscv64-mti-elf-gcc
+endif
+
 DHRY-LFLAGS =
 
 DHRY-CFLAGS := -O3 -g -DTIME -DNOENUM -Wno-implicit -save-temps
 DHRY-CFLAGS += -fno-builtin-printf -fno-common -falign-functions=4
 
 DHRY-CFLAGS += -DDHRY_ITERS=20
-CC = riscv64-mti-elf-gcc
 
 SRC = dhry_1.c dhry_2.c strcmp.S
 HDR = dhry.h

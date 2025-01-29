@@ -1,7 +1,14 @@
+RISCV_PATH=${HOME}/toolchain/riscv-elf/v2.05/bin
+CC = ${RISCV_PATH}/riscv64-mti-elf-gcc
+
+ifeq ($(RISCV_PATH),)
+# If RISCV_PATH is not defined, then it is assumed that the bin folder is on your path.
 CC = riscv64-mti-elf-gcc
+endif
+
 PROGRAM = mandelbrot
 CFLAGS := -g -Wno-implicit
-CFLAGS += -fno-builtin-printf -fno-common -falign-functions=4 -fstack-usage -fdump-ipa-cgraph
+CFLAGS += -fno-builtin-printf -fno-common -falign-functions=4
 
 override CFLAGS += -Xlinker --defsym=__stack_size=0x800 -Xlinker --defsym=__heap_size=0x1000 
 
@@ -30,4 +37,4 @@ $(PROGRAM)_Os: $(wildcard src/*.c) $(wildcard src/*.h)
 all: O0 O1 O2 O3
 
 clean:
-	rm -f *.elf *.i *.o *.s *.su *.cgraph
+	rm -f *.elf *.i *.o *.s *.su *.cgraph *.map
