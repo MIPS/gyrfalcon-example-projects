@@ -1,13 +1,15 @@
-RISCV_PATH=${HOME}/toolchain/riscv-elf/v2.05/bin
+# You have two choices:
+#   1. put the toolchain bin folder on your path.
+#   2. set the path here (RISCV_PATH)
+
+RISCV_PATH = ${HOME}/toolchain/riscv-elf/v2.05/bin/
+
+# You should not need to edit anything below this line.
+
 COMPILER = riscv64-mti-elf-gcc
+CC = ${RISCV_PATH}$(COMPILER)
 
-CC = ${RISCV_PATH}/$(COMPILER)
-
-ifeq (,$(wildcard $(CC)))
-# Explicit compiler not found.
-$(info Assuming compiler is on your path)
-CC = $(COMPILER)
-endif
-
-require:
-	@$(CC) --version || (echo ERROR: $(CC) not found, check config_rv64.mk)
+# Run this target from any example folder to verify 
+# the compiler is properly configured.
+checkcc:
+	$(CC) --version

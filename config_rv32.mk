@@ -1,8 +1,15 @@
-RISCV_PATH=${HOME}/toolchain/riscv-elf/v3.06/bin
-CC = ${RISCV_PATH}/riscv32-mti-elf-gcc
+# You have two choices:
+#   1. put the toolchain bin folder on your path.
+#   2. set the path here (RISCV_PATH)
 
-ifeq ($(RISCV_PATH),)
-# If RISCV_PATH is not defined, then it is assumed that the bin folder is on your path.
-CC = riscv32-mti-elf-gcc
-endif
+RISCV_PATH = ${HOME}/toolchain/riscv-elf/v3.06/bin/
 
+# You should not need to edit anything below this line.
+
+COMPILER = riscv32-mti-elf-gcc
+CC = ${RISCV_PATH}$(COMPILER)
+
+# Run this target from any example folder to verify 
+# the compiler is properly configured.
+checkcc:
+	$(CC) --version
