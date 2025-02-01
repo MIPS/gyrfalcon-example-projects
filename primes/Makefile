@@ -3,18 +3,25 @@
 include ../config_rv64.mk
 
 PROGRAM = primes
-CFLAGS := -O3 -g -Wno-implicit
-CFLAGS += -fno-builtin-printf -fno-common
 
-override CFLAGS += -Xlinker --defsym=__stack_size=0x800 -Xlinker --defsym=__heap_size=0x1000
+O0: $(PROGRAM)_O0
+O1: $(PROGRAM)_O1
+O3: $(PROGRAM)_O3
 
-all: $(PROGRAM)
 
-$(PROGRAM): $(wildcard src/*.c) $(wildcard src/*.h)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+$(PROGRAM)_O0: $(wildcard src/*.c) $(wildcard src/*.h)
+	$(CC) -O0 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+
+$(PROGRAM)_O1: $(wildcard src/*.c) $(wildcard src/*.h)
+	$(CC) -O1 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+
+$(PROGRAM)_O3: $(wildcard src/*.c) $(wildcard src/*.h)
+	$(CC) -O3 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+
+all: O0 O1 O3
 
 clean:
-	rm -f $(PROGRAM).elf *.i *.o *.s
+	rm -f *.elf *.i *.o *.s *.su *.cgraph *.map
 
 fresh: clean
 	rm -rf experiments

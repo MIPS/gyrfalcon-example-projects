@@ -4,8 +4,8 @@ include ../config_rv64.mk
 
 DHRY-LFLAGS =
 
-DHRY-CFLAGS := -O3 -g -DTIME -DNOENUM -Wno-implicit -save-temps
-DHRY-CFLAGS += -fno-builtin-printf -fno-common -falign-functions=4
+DHRY-CFLAGS := -O3 -g -DTIME -DNOENUM -Wno-implicit -save-temps -frecord-gcc-switches
+DHRY-CFLAGS += -fno-builtin-printf -fno-common -falign-functions=4 -Wno-pointer-to-int-cast -Wno-builtin-declaration-mismatch
 
 DHRY-CFLAGS += -DDHRY_ITERS=20
 

@@ -9,7 +9,7 @@ int fibonacci(int n) {
 }
 
 int main() {
-    int n = 20;
+    int n = 10;
     for (int i = 0; i < n; i++) {
         fibonacci(i);
     }
