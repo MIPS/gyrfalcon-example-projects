@@ -2,6 +2,8 @@
 # it is configured for your environment.
 include ../config_rv64.mk
 
+PROGRAM = memcpy
+
 O0: $(PROGRAM)_O0
 O1: $(PROGRAM)_O1
 O3: $(PROGRAM)_O3

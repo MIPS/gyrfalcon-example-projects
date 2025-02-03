@@ -9,13 +9,13 @@ O1: $(PROGRAM)_O1
 O3: $(PROGRAM)_O3
 
 $(PROGRAM)_O0: $(wildcard src/*.c) $(wildcard src/*.h)
-	$(CC) -O0 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+	$(CC) -O0 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -Xlinker -Map=$@.map  -o $@.elf
 
 $(PROGRAM)_O1: $(wildcard src/*.c) $(wildcard src/*.h)
-	$(CC) -O1 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+	$(CC) -O1 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -Xlinker -Map=$@.map  -o $@.elf
 
 $(PROGRAM)_O3: $(wildcard src/*.c) $(wildcard src/*.h)
-	$(CC) -O3 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -o $@.elf
+	$(CC) -O3 $(CFLAGS) $(LDFLAGS) $(filter %.c %.S,$^) -Xlinker -Map=$@.map  -o $@.elf
 
 all: O0 O1 O3
 
