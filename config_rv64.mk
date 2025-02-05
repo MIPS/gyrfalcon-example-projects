@@ -2,7 +2,14 @@
 #   1. put the toolchain bin folder on your path.
 #   2. set the path here (RISCV_PATH)
 
-RISCV_PATH = ${HOME}/toolchain/riscv-elf/v2.05/bin/
+ROOT := 
+ifeq ($(OS),Windows_NT)
+	ROOT = $(USERPROFILE)
+else
+	ROOT = $(HOME)
+endif
+
+RISCV_PATH = ${ROOT}/toolchain/riscv-elf/v2.05/bin/
 
 # You should not need to edit anything below this line.
 
@@ -20,5 +27,9 @@ CFLAGS += -Xlinker --defsym=__stack_size=0x800 -Xlinker --defsym=__heap_size=0x1
 
 # Run this target from any example folder to verify 
 # the compiler is properly configured.
+
 checkcc:
-	$(CC) --version
+	@echo "The default target simply prints the version infor for the configured toolchain:"
+	@echo ""
+	@$(CC) --version
+	@echo "Use 'make all', or 'make <target-name>' to build example ELF files"

@@ -1,4 +1,4 @@
-example_list := mandelbrot primes memcpy memwalk matmul motor hanoi fibonacci dhrystone
+example_list := mandelbrot primes memcpy memwalk matmul hanoi fibonacci dhrystone
 
 ifeq (checkcc64,$(filter checkcc64,$(MAKECMDGOALS)))
 include config_rv64.mk
