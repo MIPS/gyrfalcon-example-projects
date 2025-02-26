@@ -1,6 +1,7 @@
 # CC is defined in this common config file.  Make sure
 # it is configured for your environment.
-ARCH?=rv64
+RV?=64
+ARCH=rv${RV}
 include ../config_${ARCH}.mk
 
 DHRY-LFLAGS =
