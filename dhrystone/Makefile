@@ -1,6 +1,7 @@
 # CC is defined in this common config file.  Make sure
 # it is configured for your environment.
-include ../config_rv64.mk
+ARCH?=rv64
+include ../config_${ARCH}.mk
 
 DHRY-LFLAGS =
 
@@ -12,10 +13,10 @@ DHRY-CFLAGS += -DDHRY_ITERS=20
 SRC = dhry_1.c dhry_2.c strcmp.S
 HDR = dhry.h
 
-all: dhrystone
+all: dhrystone_${ARCH}
 
 override CFLAGS += $(DHRY-CFLAGS) $(XCFLAGS) -Xlinker --defsym=__stack_size=0x800 -Xlinker --defsym=__heap_size=0x1000
-dhrystone: $(SRC) $(HDR)
+dhrystone_${ARCH}: $(SRC) $(HDR)
 	$(CC) $(CFLAGS) $(SRC) $(LDFLAGS) $(LOADLIBES) $(LDLIBS) -o $@.elf
 
 clean:
