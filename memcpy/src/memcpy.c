@@ -10,6 +10,7 @@ int main() {
     uint8_t dst_memory[MEMORY_SIZE]; // Replace with your memory address
 
     memset(src_memory, 0x55, MEMORY_SIZE);
+    memset(dst_memory, 0xAA, MEMORY_SIZE);
 
     START_TRACE
     memcpy(&dst_memory, &src_memory, MEMORY_SIZE);
