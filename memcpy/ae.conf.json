@@ -1,0 +1,6 @@
+{
+    "functions": {
+        "includes": ["memcpy", "memset"],
+        "excludeFunctionsWithNoSource": false
+    }
+}

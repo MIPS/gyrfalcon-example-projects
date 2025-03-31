@@ -17,6 +17,12 @@ void iterate_p2() {
 	Zy2 = Zy * Zy;
 }
 
+// This function is intentionaslly not used.
+void iterate_p3() {
+	Zx2 = Zy * Zx;
+	Zy2 = Zx * Zy;
+}
+
 int is_inside() {
 	return ((Zx2 + Zy2) < ER2);
 }

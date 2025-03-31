@@ -4,6 +4,7 @@
 #include <stdio.h>
  
 #define MEMORY_SIZE 8*1024 // Adjust based on your memory size
+#define ITERS 1
 
 int main() {
     uint8_t src_memory[MEMORY_SIZE]; // Replace with your memory address
@@ -13,7 +14,9 @@ int main() {
     memset(dst_memory, 0xAA, MEMORY_SIZE);
 
     START_TRACE
-    memcpy(&dst_memory, &src_memory, MEMORY_SIZE);
+    for (int i=0; i<ITERS; i++) {
+        memcpy(&dst_memory, &src_memory, MEMORY_SIZE);
+    }
     STOP_TRACE
 
     return 0;
