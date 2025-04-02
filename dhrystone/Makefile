@@ -1,13 +1,18 @@
 # CC is defined in this common config file.  Make sure
 # it is configured for your environment.
-RV?=32
+RV?=64
 ARCH=rv${RV}
 include ../config_${ARCH}.mk
 
 DHRY-LFLAGS =
 
-DHRY-CFLAGS := -O3 -g -DTIME -DNOENUM -Wno-implicit -save-temps -frecord-gcc-switches
+DHRY-CFLAGS := -DTIME -DNOENUM -Wno-implicit -frecord-gcc-switches
 DHRY-CFLAGS += -mlittle-endian $(MTUNE) -mcmodel=medany -mload-store-pairs -mccmov -misa-spec=20191213 -mlittle-endian -g -Ofast -funroll-loops -fno-inline -fipa-pta
+
+ifeq ($(RV),'32')
+DHRY-CFLAGS += -falign-jumps=2 -falign-loops=2
+endif
+
 
 DHRY-CFLAGS += -DDHRY_ITERS=20
 DHRY-CFLAGS += $(MTUNE)
