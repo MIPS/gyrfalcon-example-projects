@@ -19,6 +19,8 @@ CC = ${RISCV_PATH}$(COMPILER)
 # Add debug info (even for optimized) se we can do source sync.
 CFLAGS := -g -Wno-implicit 
 
+MTUNE=-mtune=i8500 -mabi=lp64d -march=rv64imafdc_zicsr_zba_zbb 
+
 # Recording compiler information in the ELF.  This info will
 # be extracted and made available in the experiment.
 CFLAGS += -frecord-gcc-switches
