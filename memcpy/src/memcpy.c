@@ -3,20 +3,19 @@
 #include <string.h>
 #include <stdio.h>
  
-#define MEMORY_SIZE 8*1024 // Adjust based on your memory size
-#define ITERS 1
+#define MEMORY_SIZE 2048 // Adjust based on your memory size
 
 int main() {
-    uint8_t src_memory[MEMORY_SIZE]; // Replace with your memory address
-    uint8_t dst_memory[MEMORY_SIZE]; // Replace with your memory address
+    int src_memory[MEMORY_SIZE];
+    int dst_memory[MEMORY_SIZE]; 
 
-    memset(src_memory, 0x55, MEMORY_SIZE);
-    memset(dst_memory, 0xAA, MEMORY_SIZE);
+    for(int i = 0; i< MEMORY_SIZE; i++){
+        src_memory[i]=i;
+        dst_memory[i]=2*i;
+     }
 
     START_TRACE
-    for (int i=0; i<ITERS; i++) {
-        memcpy(&dst_memory, &src_memory, MEMORY_SIZE);
-    }
+    memcpy(&dst_memory, &src_memory, MEMORY_SIZE * sizeof(int));
     STOP_TRACE
 
     return 0;
