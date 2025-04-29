@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run OVPsim",
+      "type": "shell",
+      "command": "/home/nick/imperas/riscv-ovpsim-mips/bin/Linux64/riscvOVPsimMIPS.exe",
+      "args": [
+        "--program",
+        "${workspaceFolder}/fibonacci_rv64_O0.elf",
+        "--variant",
+        "I8500",
+        "--port",
+        "1234"
+      ],
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": [
+          {
+            "regexp": ".*",
+            "file": 0,
+            "location": 1,
+            "message": 2
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*riscvOVPsimMIPS started.*",
+          "endsPattern": ".*GDBT_WAIT.*"
+        }
+      },
+      "isBackground": true
+    }
+  ]
+}
