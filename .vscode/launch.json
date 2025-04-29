@@ -1,30 +1,30 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Fibonacci_O0 - OVP Simulator",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/fibonacci/fibonacci_rv64_O0.elf", // Path to the compiled ELF binary
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/home/nick/toolchain/riscv-elf/v2.05/bin/riscv64-mti-elf-gdb", // Replace with the path to Imperas GDB
+      "setupCommands": [
         {
-            "name": "Debug Fibonacci with OVP Simulator",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/fibonacci_rv64_O0.elf", // Path to the compiled ELF binary
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "/home/nick/toolchain/riscv-elf/v2.05/bin/riscv64-mti-elf-gdb", // Replace with the path to Imperas GDB
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Connect to OVP simulator",
-                    "text": "target remote :1234" // Port used by the OVP simulator
-                }
-            ],
-            "preLaunchTask": "Run OVPsim"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Connect to OVP simulator",
+          "text": "target remote :1234" // Port used by the OVP simulator
         }
-    ]
+      ],
+      "preLaunchTask": "Run OVPsim"
+    }
+  ]
 }

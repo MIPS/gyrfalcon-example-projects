@@ -7,7 +7,7 @@
       "command": "/home/nick/imperas/riscv-ovpsim-mips/bin/Linux64/riscvOVPsimMIPS.exe",
       "args": [
         "--program",
-        "${workspaceFolder}/fibonacci_rv64_O0.elf",
+        "${workspaceFolder}/fibonacci/fibonacci_rv64_O0.elf",
         "--variant",
         "I8500",
         "--port",
